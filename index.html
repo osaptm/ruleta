@@ -11,7 +11,7 @@
 
 <body>
   <div id="premio">
-
+    <button onclick="mensajeMultiplatform()">Mensaje a Android o IOS</button>
     <table style=" margin: 0 auto;">
       <tr>
         <td>
@@ -44,6 +44,16 @@
   <script src="js/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/script.js"></script>
+  <script>
+    function mensajeMultiplatform(){
+      window.kmpJsBridge.callNative("Greet",JSON.stringify({message:"Hello"}),
+        function (data) {
+          document.getElementById("subtitle").innerText = data;
+          console.log("Greet from Native: " + data);
+        }
+      );
+    }
+  </script>
 </body>
 
 </html>
