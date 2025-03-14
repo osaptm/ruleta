@@ -1,15 +1,12 @@
 * {
-    margin: 0px;
-    text-align: center;
-}
-
-body {
-    background-image: url("http://127.0.0.1:5500/image/fondo.png ");
+    .selector-for-some-widget {
+        box-sizing: content-box;
+    }
 }
 
 .vara {
-    height: 70px;
-    width: 15px;
+    height: 30px;
+    width: 8px;
     background-color: #aaa;
     margin: auto;
     position: relative;
@@ -20,16 +17,13 @@ body {
     z-index: 1000;
 }
 
+@media (max-width: 300px) {
+    .vara {
+        height: 25px;
+    }
+}
+
 img {
     z-index: 100;
     transition: all 5s;
-}
-
-#premio {
-    color: white;
-    position: absolute;
-    font-weight: bold;
-    font-size: 25px;
-    padding-top: 20px;
-    padding: 20px;
 }
