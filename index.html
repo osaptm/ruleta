@@ -35,8 +35,9 @@
     function mensajeMultiplatform(){
       window.kmpJsBridge.callNative("MessageWeb",JSON.stringify({message:"Girar"}),
         function (data) {
-           alert(data.message)
-           if(data.message == "GirarOK"){
+           let dataVal = JSON.parse(data)
+           alert(data)
+           if(dataVal.message == "GirarOK"){
               girarRuleta()
            }
         }
