@@ -2,7 +2,7 @@ const ruleta = document.querySelector('#ruleta');
 
 function girarRuleta(){
 
-    let rand = Math.random() * 7200;
+    let rand = Math.random() + 3600;
     calcular(rand);
     var sonido = document.querySelector('#audio');
     sonido.setAttribute('src', 'sonido/ruleta.mp3');
