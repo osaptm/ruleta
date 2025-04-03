@@ -32,9 +32,11 @@
   <script src="js/script.js"></script>
   <script>
     function mensajeMultiplatform(){
-      window.kmpJsBridge.callNative("MessageWeb",JSON.stringify({message:"Hello"}),
+      window.kmpJsBridge.callNative("MessageWeb",JSON.stringify({message:"Girar"}),
         function (data) {
-           alert(data);
+           if(data.message == "GirarOK"){
+              girarRuleta()
+           }
         }
       );
     }

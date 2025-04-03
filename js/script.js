@@ -1,8 +1,6 @@
 const ruleta = document.querySelector('#ruleta');
 
-ruleta.addEventListener('click', girar);
-
-function girar(){
+function girarRuleta(){
 
     let rand = Math.random() * 7200;
     calcular(rand);
