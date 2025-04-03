@@ -34,7 +34,7 @@
     function mensajeMultiplatform(){
       window.kmpJsBridge.callNative("Greet",JSON.stringify({message:"Hello"}),
         function (data) {
-          document.getElementById("premio").innerText = data;
+           alert(data);
         }
       );
     }
