@@ -2,8 +2,12 @@ const ruleta = document.querySelector('#ruleta');
 var giro = 3600
 
 function girarRuleta(){
-
-    let rand = Math.random() + ((giro == 3600)? 0 : 3600);
+    if(giro == 3600){
+      giro = 0
+    }else{
+      giro == 3600
+    }
+    let rand = Math.random() + giro
     calcular(rand);
     var sonido = document.querySelector('#audio');
     sonido.setAttribute('src', 'sonido/ruleta.mp3');
