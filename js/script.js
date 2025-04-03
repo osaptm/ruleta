@@ -1,9 +1,12 @@
 const ruleta = document.querySelector('#ruleta');
-
+var giro = 0
 
 function girarRuleta(){
 
-    let rand = Math.random() * 3600
+    if(giro == 0) giro = 3600
+    else giro = 0
+
+    let rand = (Math.random() * 360) + giro
     calcular(rand);
     var sonido = document.querySelector('#audio');
     sonido.setAttribute('src', 'sonido/ruleta.mp3');
@@ -20,7 +23,7 @@ function girarRuleta(){
       ruleta.style.transform = "rotate("+rand+"deg)";
 
       setTimeout(() => {
-          ruleta.style.transform = "rotate(0deg)";
+
           switch (true) {
             case valor > 0 && valor <= 45:
             premio("2 estrellas");
