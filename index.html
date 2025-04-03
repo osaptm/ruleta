@@ -14,7 +14,8 @@
  
   <div class="container d-flex flex-column justify-content-center align-items-center">
 
-    <button type="button" class="btn btn-primary" onclick="mensajeMultiplatform()">Mensaje a Android o IOS</button>
+    <button type="button" class="btn btn-primary" onclick="mensajeMultiplatform()">Girar Dede Mobile</button>
+    <button type="button" class="btn btn-primary" onclick="girarRuleta()">Girar Ruleta desde Web</button>
 
     <div id="mensaje"></div>
 
@@ -34,6 +35,7 @@
     function mensajeMultiplatform(){
       window.kmpJsBridge.callNative("MessageWeb",JSON.stringify({message:"Girar"}),
         function (data) {
+           alert(data.message)
            if(data.message == "GirarOK"){
               girarRuleta()
            }
