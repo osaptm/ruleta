@@ -1,8 +1,9 @@
 const ruleta = document.querySelector('#ruleta');
+var giro = 3600
 
 function girarRuleta(){
 
-    let rand = Math.random() + 3600;
+    let rand = Math.random() + ((giro == 3600)? 0 : 3600);
     calcular(rand);
     var sonido = document.querySelector('#audio');
     sonido.setAttribute('src', 'sonido/ruleta.mp3');
